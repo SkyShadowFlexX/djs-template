@@ -1,62 +1,55 @@
 const { Client, Collection } = require("discord.js");
-// Import Discord.Js.
+// Importiere Discord.Js.
 const client = new Client({ intents: 32767 });
-// Make New Discord Client.
+// Erstelle einen neuen Discord Client
 module.exports = client;
-// Export Client To Give Other Files Access.
+// Exportiere Client in andere Datein
 const chalk = require("chalk");
-// Import Chalk
+// Importiert Chalk (Farben in der Konsole)
 
-// ———————————————[Global Variables]———————————————
+// ———————————————[Globale Variables]———————————————
 client.commands = new Collection();
 client.aliases = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./botconfig/main.json");
 require("./handler")(client);
-// Initializing the project.
+// Initialisiert variablen
 
-// ———————————————[Logging Into Client]———————————————
+// ———————————————[Einloggen in den Client]———————————————
 const token = process.env["clienttoken"] || client.config.clienttoken;
 if(token === ""){
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(
       chalk.white("["),
-      chalk.red.bold("AntiCrash"),
+      chalk.blue.bold("SkyZ Hosting"),
       chalk.white("]"),
       chalk.gray(" : "),
-      chalk.white.bold("Invalid Token")
+      chalk.white.bold("Fehlerhafter Token")
    );
    console.log(chalk.gray("—————————————————————————————————"));
-   console.log(chalk.magenta("There Are 3 Ways To Fix This"));
+   console.log(chalk.magenta("Es existieren 2 möglichkeiten das zu Fixen"));
    console.log(
-      chalk.blue("Put Your ") + chalk.red("Bot Token ") + chalk.blue("in:")
+      chalk.blue("Setzte dein ") + chalk.red("Bot Token ") + chalk.blue("in:")
    );
    console.log(
       chalk.yellow.bold("1.) ") +
          chalk.cyan("index.js") +
          chalk.gray(
-            " On the client.login line remove client.login(token) and write client.login('Your token')"
+            " Im client.login ändere client.login(token) zu client.login('Dein Token')"
          )
    );
    console.log(
       chalk.yellow.bold("2.) ") +
-         chalk.cyan("ENV/Secrets") +
-         chalk.gray(
-            " If using replit, make new secret named 'clienttoken' and put your token in it else, if your using VsCode, Then Follow Some ENV tutorials (I don't suggest using it in VSC)"
-         )
-   );
-   console.log(
-      chalk.yellow.bold("3.) ") +
          chalk.cyan("main.json ") +
          chalk.gray(
-            'Go To botconfig/main.json, Find The Line with client.token and put "client.token":"Your Bot Token"'
+            'Gehe in botconfig/main.json, Finde "client.token":"Bot Token" und setzte deinen Token hinein'
          )
    );
    console.log(
-      chalk.green.bold("Still Need Help? Contact Me:\n") +
-         chalk.yellow.italic("Discord: DrakeZee#5223\n") +
-         chalk.yellow.italic("Discord Server: dsc.gg/botsway")
+      chalk.green.bold("Du benötigst noch hilfe? Kontaktiere uns:\n") +
+         chalk.yellow.italic("Discord: SkyZ Host TICKET\n") +
+         chalk.yellow.italic("Erstelle bei uns ein Ticket!")
    );
 } else {
    client.login(token);
@@ -67,7 +60,7 @@ process.on("unhandledRejection", (reason, p) => {
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(
       chalk.white("["),
-      chalk.red.bold("AntiCrash"),
+      chalk.blue.bold("SkyZ Hosting"),
       chalk.white("]"),
       chalk.gray(" : "),
       chalk.white.bold("Unhandled Rejection/Catch")
@@ -79,7 +72,7 @@ process.on("uncaughtException", (err, origin) => {
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(
       chalk.white("["),
-      chalk.red.bold("AntiCrash"),
+      chalk.blue.bold("SkyZ Hosting"),
       chalk.white("]"),
       chalk.gray(" : "),
       chalk.white.bold("Uncaught Exception/Catch")
@@ -91,25 +84,21 @@ process.on("multipleResolves", (type, promise, reason) => {
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(
       chalk.white("["),
-      chalk.red.bold("AntiCrash"),
+      chalk.blue.bold("SkyZ Hosting"),
       chalk.white("]"),
       chalk.gray(" : "),
-      chalk.white.bold("Multiple Resolves")
+      chalk.white.bold("Mehrere möglichkeiten")
    );
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(type, promise, reason);
 });
 
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev          | discord.gg/milrato
+ * LG Sky
  */
