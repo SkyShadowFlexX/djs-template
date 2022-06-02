@@ -21,7 +21,7 @@ client.on("messageCreate", async (message) => {
       .trim()
       .split(" ");
    let noargs_embed = new MessageEmbed()
-      .setTitle(`:x: | Please Provide A Command To Be Executed!`)
+      .setTitle(`:x: | Bitte wähle einen Command!`)
       .setColor("RED")
       .setFooter(`${clientname}`, `${clientavatar}`)
       .setTimestamp();
@@ -31,7 +31,7 @@ client.on("messageCreate", async (message) => {
       client.commands.get(cmd.toLowerCase()) ||
       client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
    let nocmd_embed = new MessageEmbed()
-      .setTitle(`:x: | No Command Found! Try Using  \`${prefix}help\``)
+      .setTitle(`:x: | Command wurde nciht gefunden  \`${prefix}help\``)
       .setColor("RED")
       .setFooter(`${clientname}`, `${clientavatar}`)
       .setTimestamp();
@@ -39,7 +39,7 @@ client.on("messageCreate", async (message) => {
    if (command.toggleOff) {
       let toggleoff_embed = new MessageEmbed()
          .setTitle(
-            `:x: | That Command Has Been Disabled By The Developers! Please Try Later.`
+            `:x: | Dieser Command wurde von den Developern deaktiviert! Versuche es später erneut.`
          )
          .setColor("RED")
          .setFooter(`${clientname}`, `${clientavatar}`)
@@ -47,14 +47,14 @@ client.on("messageCreate", async (message) => {
       return message.reply({ embeds: [toggleoff_embed] });
    } else if (!message.member.permissions.has(command.userpermissions || [])) {
       let userperms_embed = new MessageEmbed()
-         .setTitle(`:x: | You Don't Have Permissions To Use The Command!`)
+         .setTitle(`:x: | Du hast nicht die Rechte dazu!`)
          .setColor("RED")
          .setFooter(`${clientname}`, `${clientavatar}`)
          .setTimestamp();
       return message.reply({ embeds: [userperms_embed] });
    } else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
       let botperms_embed = new MessageEmbed()
-         .setTitle(`:x: | I Don't Have Permissions To Use The Command!`)
+         .setTitle(`:x: | Ich habe keine Berechtigungen dazu!`)
          .setColor("RED")
          .setFooter(`${clientname}`, `${clientavatar}`)
          .setTimestamp();
@@ -62,7 +62,7 @@ client.on("messageCreate", async (message) => {
    } else if (command.developersOnly) {
       if (!developerID.includes(message.author.id)) {
          let developersOnly_embed = new MessageEmbed()
-            .setTitle(`:x: | Only Developers Can Use That Command!`)
+            .setTitle(`:x: | Nur Developer können das machen!`)
             .setDescription(
                `Developers: ${developerID.map((v) => `<@${v}>`).join(",")}`
             )
@@ -82,11 +82,11 @@ client.on("messageCreate", async (message) => {
                }`
             )
             .setDescription(
-               `You Need To Wait \`${ms(
+               `Du musst noch \`${ms(
                   client.cooldowns.get(`${command.name}${message.author.id}`) -
                      Date.now(),
                   { long: true }
-               )}\` To Use \`${prefix}${command.name}\` again!`
+               )}\` warten um \`${prefix}${command.name}\` nochmal zu nutzen!`
             )
             .setColor("BLUE")
             .setFooter(`${clientname}`, `${clientavatar}`)
@@ -107,15 +107,11 @@ client.on("messageCreate", async (message) => {
    await command.run(client, message, args);
 });
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
