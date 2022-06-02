@@ -29,6 +29,6 @@ module.exports = {
       const member = message.mentions.members.first();
       if (!member) return message.reply("Nenne mir bitte einen Nutzer...");
 
-      message.reply(`About ${member}: \`Er/Sie nutzt SkyZ Hosting!\``);
+      message.reply(`Über ${member}: \`Er/Sie nutzt SkyZ Hosting!\``);
    },
 };
