@@ -15,20 +15,20 @@ client.on("ready", async () => {
     { type: "WATCHING" }
   );
   // ———————————————[Ready MSG]———————————————
-  console.log(chalk.green.bold("Success!"));
-  console.log(chalk.gray("Connected To"), chalk.yellow(`${client.user.tag}`));
+  console.log(chalk.green.bold("Erfolgreich!"));
+  console.log(chalk.gray("Verbunden mit "), chalk.yellow(`${client.user.tag}`));
   console.log(
-    chalk.white("Watching"),
+    chalk.white("Schaut "),
     chalk.red(`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)}`),
     chalk.white(
       `${
         client.guilds.cache.reduce((a, b) => a + b.memberCount, 0) > 1
-          ? "Users,"
-          : "User,"
+          ? "Nutzern,"
+          : "Nutzer,"
       }`
     ),
     chalk.red(`${client.guilds.cache.size}`),
-    chalk.white(`${client.guilds.cache.size > 1 ? "Servers." : "Server."}`)
+    chalk.white(`${client.guilds.cache.size > 1 ? "Server." : "Server."}`)
   );
   console.log(
     chalk.white(`Prefix:` + chalk.red(` ${prefix}`)),
@@ -38,18 +38,18 @@ client.on("ready", async () => {
   );
   console.log(
     chalk.white(`Support-Server: `) +
-      chalk.red(`${supportServer.name || "None"}`)
+      chalk.red(`${supportServer.name || "Kein"}`)
   );
   console.log("");
   console.log(chalk.red.bold("——————————[Statistics]——————————"));
   console.log(
     chalk.gray(
-      `Discord.js Version: ${discordjsVersion}\nRunning on Node ${process.version} on ${process.platform} ${process.arch}`
+      `Discord.js Version: ${discordjsVersion}\nLäuft auf Node ${process.version} auf ${process.platform} ${process.arch}`
     )
   );
   console.log(
     chalk.gray(
-      `Memory: ${(process.memoryUsage().rss / 1024 / 1024).toFixed(
+      `RAM: ${(process.memoryUsage().rss / 1024 / 1024).toFixed(
         2
       )} MB RSS\n${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(
         2
@@ -58,15 +58,11 @@ client.on("ready", async () => {
   );
 });
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * This Was Only Possible By Following People :
- *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
