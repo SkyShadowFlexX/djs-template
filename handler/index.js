@@ -43,23 +43,23 @@ module.exports = async (client) => {
       console.log(chalk.gray("—————————————————————————————————"));
       console.log(
         chalk.white("["),
-        chalk.red.bold("AntiCrash"),
+        chalk.blue.bold("SkyZ Hosting"),
         chalk.white("]"),
         chalk.gray(" : "),
-        chalk.white.bold("Couldn't Find ServerID to set the Slash Cmds")
+        chalk.white.bold("Finde ServerID nciht um die Slashes hinzuzufügen")
       );
       console.log(chalk.gray("—————————————————————————————————"));
-      console.log(chalk.magenta("Please Fix it with following methods."));
+      console.log(chalk.magenta("Bitte fixe es mit folgenden Möglichkeiten."));
       console.log(
         chalk.yellow.bold("1.) ") +
-          chalk.cyan("Go to ") +
+          chalk.cyan("Gehe in ") +
           chalk.red.underline("botconfig/main.json") +
-          chalk.cyan(" and put your \nSupportServer/TestServer ID in the") +
+          chalk.cyan(" und setze \nSupportServer/TestServer ID in den") +
           chalk.red(" TestingServerID String!")
       );
       console.log(
         chalk.yellow.bold("2.) ") +
-          chalk.cyan("Use Global Slash Commands by changing line no 74 to\n") +
+          chalk.cyan("Nutze Globale Slash Commands in dem du "no" in Zeile 74 zu\n") +
           chalk.blue.bold.underline(
             " await client.application.commands.set(arrayOfSlashCommands);\n"
           ) +
@@ -82,15 +82,11 @@ module.exports = async (client) => {
 };
 
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * This Was Only Possible By Following People :
- *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
