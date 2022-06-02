@@ -25,13 +25,13 @@ client.on("interactionCreate", async (interaction) => {
 
       cmd.run(client, interaction, args);
    }
-   // ———————————————[Buttons]———————————————
+   // ———————————————[Knöpfe]———————————————
    if (interaction.isButton()) {
    }
-   // ———————————————[Select Menu]———————————————
+   // ———————————————[Auswahl Menü]———————————————
    if (interaction.isSelectMenu()) {
    }
-   // ———————————————[Context Menu]———————————————
+   // ———————————————[Context Menü]———————————————
    if (interaction.isContextMenu()) {
       await interaction.deferReply({ ephemeral: false });
       const command = client.slashCommands.get(interaction.commandName);
@@ -40,15 +40,11 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
