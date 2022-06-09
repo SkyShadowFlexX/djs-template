@@ -50,3 +50,13 @@ const inf = new MessageEmbed()
 message.channel.send({ embeds: [inf] });
     },
 };
+
+/*
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
+ *
+ * LG Sky
+ */
