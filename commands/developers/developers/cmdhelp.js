@@ -1,7 +1,7 @@
 const { MessageEmbed, Message, Discord } = require("discord.js");
 const { readdirSync } = require("fs");
 const ms = require("ms");
-const prefix = "x?";
+const prefix = "";
 let color = "#2F3136";
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
    botpermissions: ["ADMINISTRATOR"],
    run: async (client, message, args) => {
       if (!args[0]) {
-         message.reply("Please Give A Command Name...");
+         message.reply("Bitte nenne einen Command Namen...");
       } else {
          let cots = [];
          let catts = [];
@@ -31,7 +31,7 @@ module.exports = {
             const cmds = commands.map((command) => {
                let file = require(`../../commands/${dir}/${command}`);
 
-               if (!file.name) return "No command name.";
+               if (!file.name) return "Kein Command Name.";
 
                let name = file.name.replace(".js", "");
 
@@ -50,8 +50,8 @@ module.exports = {
 
             cmds.map((co) => {
                dota = {
-                  name: `${cmds.length === 0 ? "In progress." : co.cname}`,
-                  value: co.des ? co.des : "No Description",
+                  name: `${cmds.length === 0 ? "In Arbeit." : co.cname}`,
+                  value: co.des ? co.des : "Keine Beschreibung",
                   inline: true,
                };
                catts.push(dota);
@@ -73,7 +73,7 @@ module.exports = {
          if (!command) {
             const embed = new MessageEmbed()
                .setTitle(
-                  `Invalid command! Use \`${prefix}help\` for all of my commands!`
+                  `Unbekannter Command! Nutze \`${prefix}help\` für all meine Commands!`
                )
                .setColor("RED");
             return message.channel.send({ embeds: [embed] });
@@ -83,50 +83,50 @@ module.exports = {
             .setTitle("Command Details:")
             .addField(
                "Command:",
-               command.name ? `${command.name}` : "No name for this command."
+               command.name ? `${command.name}` : "Kein Name für diesen Command."
             )
             .addField(
-               "Aliases:",
+               "Alias:",
                command.aliases
                   ? `${command.aliases.join(" ,")}`
-                  : "No aliases for this command."
+                  : "Keine Alias für diesen Command."
             )
             .addField(
                "Cooldowns:",
-               command.cooldowns ? `${ms(command.cooldowns)}` : `None.`
+               command.cooldowns ? `${ms(command.cooldowns)}` : `Keinen.`
             )
             .addField(
-               "Description:",
+               "Beschreibung:",
                command.description
                   ? command.description
-                  : "No description for this command."
+                  : "Keine Beschreibung für diesen Command."
             )
             .addField(
-               "Usage:",
+               "Nutzung:",
                command.usage
                   ? `${prefix}${command.name} ${command.usage}`
                   : `${prefix}${command.name}`
             )
             .addField(
                "Command Status:",
-               command.toggleOff ? `Offline` : `Online`
+               command.toggleOff ? `Deaktiviert` : `Aktiviert`
             )
-            .addField("DevelopersOnly:", command.developersOnly ? `Yes` : `No`)
+            .addField("DevelopersOnly:", command.developersOnly ? `Ja` : `Nein`)
             .addField(
-               "Bot-Permissions Required:",
+               "Bot-Berechtigung benötigt:",
                command.botpermissions
                   ? `${command.botpermissions.join(", ")}`
-                  : `None`
+                  : `Kein/e`
             )
             .addField(
-               "User-Permissions Required:",
+               "User-Rechte benötigt:",
                command.memberpermissions
                   ? `${command.memberpermissions.join(", ")}`
-                  : `None`
+                  : `Kein/e`
             )
 
             .setFooter(
-               `Requested by ${message.author.tag}`,
+               `Anfrage von ${message.author.tag}`,
                message.author.displayAvatarURL({
                   dynamic: true,
                })
@@ -139,15 +139,11 @@ module.exports = {
 };
 
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
