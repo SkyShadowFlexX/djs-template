@@ -5,7 +5,7 @@ const { clientname, clientavatar } = require("../../botconfig/main.json");
 module.exports = {
    name: "reload",
    cooldowns: 3000,
-   description: "Reload Commands",
+   description: "Lade die Commands neu",
    usage: "",
    toggleOff: false,
    developersOnly: true,
@@ -21,8 +21,8 @@ module.exports = {
             const pull = require(file);
             if (pull.name) {
                console.log(
-                  chalk.red("✪ ") +
-                     chalk.blue(`Reloaded `) +
+                  chalk.red("» ") +
+                     chalk.blue(`Neugeladen `) +
                      chalk.green(`${pull.name} `) +
                      chalk.blue(`Command`)
                );
@@ -37,7 +37,7 @@ module.exports = {
          });
       });
       let reload_embed = new MessageEmbed()
-         .setTitle(`:white_check_mark: | Reloaded All Commands`)
+         .setTitle(`:white_check_mark: | Alle Command wurden neugeladen`)
          .setColor("GREEN")
          .setFooter(`${clientname}`, `${clientavatar}`)
          .setTimestamp();
@@ -46,15 +46,11 @@ module.exports = {
 };
 
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay 
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
