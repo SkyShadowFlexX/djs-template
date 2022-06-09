@@ -33,10 +33,10 @@ module.exports = {
             .filter((cmd) => cmd.directory === dir)
             .map((cmd) => {
                return {
-                  name: cmd.name ? cmd.name : "No command name!",
+                  name: cmd.name ? cmd.name : "Kein Command Name!",
                   description: cmd.description
                      ? cmd.description
-                     : "No command description!",
+                     : "Keine Beschreibung!",
                };
             });
 
@@ -49,7 +49,7 @@ module.exports = {
       const embed = new MessageEmbed()
          .setTitle(`${clientname || "Bot"}'s Commands`)
          .setDescription(
-            "Please choose one of the options in the dropdown below!"
+            "Bitte wähle eine Kategorie unten im Menü!"
          )
          .setColor(roleColor)
          .setFooter(`${clientname}`, `${clientavatar}`)
@@ -59,7 +59,7 @@ module.exports = {
          new MessageActionRow().addComponents(
             new MessageSelectMenu()
                .setCustomId("help-menu")
-               .setPlaceholder("Please select a category!")
+               .setPlaceholder("Bitte wähle eine Kategorie!")
                .setDisabled(state)
                .addOptions([
                   categories.map((cmd) => {
@@ -68,7 +68,7 @@ module.exports = {
                         value: `${cmd.directory.toLowerCase()}`,
                         emoji: `${helpemoji[cmd.directory.toLowerCase()]}`,
                         description:
-                           `Commands from ` + `${cmd.directory}` + " category",
+                           `Commands von der ` + `${cmd.directory}` + " Kategorie",
                      };
                   }),
                ])
@@ -97,7 +97,7 @@ module.exports = {
          const embed2 = new MessageEmbed()
             .setTitle(`${directory.charAt(0).toUpperCase()}${directory.slice(1).toLowerCase()}`)
             .setDescription(
-               "" + category.commands.map((cmd) => `✪ | \`${cmd.name}\` (*${cmd.description}*)`).join("\n ")
+               "" + category.commands.map((cmd) => `» | \`${cmd.name}\` (*${cmd.description}*)`).join("\n ")
             )
             .setColor(roleColor);
 
