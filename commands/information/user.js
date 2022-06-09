@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const c = require("../../botconfig/main.json");
+const moment = require('moment');
 
 module.exports = {
    name: "user",
@@ -18,7 +19,7 @@ module.exports = {
            
   let ui = {};
     ui.bot = userm.bot;
-    ui.createdat = userm.createdAt;
+    ui.dat = userm.createdAt;
     ui.discrim = userm.discriminator;
     ui.id = userm.id;
     ui.mfa = userm.mfaEnabled;
@@ -27,21 +28,21 @@ module.exports = {
     ui.tag = userm.tag;
     ui.uname = userm.username;
     ui.verified = userm.verified;
-
+    ui.col = userm.accentColor;
+       
     ui.avatar = userm.avatarURL;
 
 const inf = new MessageEmbed()
         .setTitle("``Nutzer Informationen``")
         .setAuthor(ui.uname, ui.avatar)
-		.addFields(
-			{ name: '``🎉`` Erstellt am', value: `${userm.createdAt}`, inline: true },
-			{ name: '``💵``  Premium Account', value: `${ui.premium}`, inline: true },
- 	        { name: '\u200B', value: '\u200B' },
-			{ name: '``💳`` ID', value: `${ui.id}`, inline: true },
-			{ name: '``💾`` Name', value: `${ui.uname}`, inline: true },
-			{ name: '``✔️`` 2FA', value: `${ui.mfa}`, inline: true },
-			{ name: '``🔑`` Verifiziert?', value: `${ui.verified}`, inline: true },
-	)
+	.setDescription(`
+	\`\`💳\`\` Name ${ui.uname}\n
+	\`\`📣\`\` TAG ${ui.tag}\n
+	\`\`🎫\`\` iD ${ui.id}\n
+	\`\`🎂\`\` Erstellt ${moment(ui.dat).format('DD/MM/YYYY')}\n
+	\`\`🎉\`\` Beigetreten ${moment(ui.joinedAt).format('DD/MM/YYYY')}\n
+	\`\`⚙️\`\` Bot? ${ui.bot}\n`)
+//Füge ruhig mehr hinzu. Es ist dein Bot also mach was du möchtest ;) Nur keine Raid Bots oder so...
         .setColor(c.color)
         .setFooter(c.hoster, c.hi)
         .setThumbnail(ui.avatar);
