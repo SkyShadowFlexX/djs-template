@@ -3,19 +3,19 @@ module.exports = {
    name: "eval",
    aliases: ["e"],
    cooldowns: 3000,
-   description: "Evaluate Code",
+   description: "Werte einen Code aus",
    usage: "<code>",
    toggleOff: false,
    developersOnly: true,
    userpermissions: ["SEND_MESSAGES", "VIEW_CHANNEL"],
    botpermissions: ["ADMINISTRATOR"],
-   description: "Evaluate a given code!",
+   description: "Auswerten eines bestimmten Codes!",
 
    run: async (client, message, args) => {
       try {
          const code = args.join(" ");
          if (!code) {
-            return message.channel.send("Please Provide A code to eval!");
+            return message.channel.send("Bitte geben Sie einen Code für eine gleichung an!");
          }
          let evaled = eval(code);
 
@@ -34,16 +34,13 @@ module.exports = {
       }
    },
 };
+
 /*
- * ———————————————[Credits]———————————————
- * Made by : DrakeZee#5223
- * Support Server : dsc.gg/BotsWay
- * Youtube : youtube.com/DrakeZee
- * Please Help Me Reach 1k Subs DJs Codes And More Amazing * Stuff!
- * Also Add Me Friend When Using This, I Have No Friends :(
- * 
- * This Was Only Possible By Following People :
+ * ———————————————[Supporting]———————————————
+ * Benötigst du mal Hilfe
+ * Melde dich bei uns im Support
+ * Wir helfen dir gerne bei jedem Problem
+ * auch solltest du Code fehler haben
  *
- * recon#8448  | youtube.com/reconlxx | discord.gg/recon
- * Tomato#6966 | milrato.dev         | discord.gg/milrato
+ * LG Sky
  */
